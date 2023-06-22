@@ -40,12 +40,6 @@ def send_email(message):
     print("Email Send")
 
 
-
-# def store(extracted):
-#     with open("data.txt", "a") as file:
-#         file.write(extracted + "\n")
-
-
 def store(extracted):
     row = extracted.split(",")
     row = [item.strip() for item in row]
@@ -53,10 +47,6 @@ def store(extracted):
     cursor.execute("INSERT INTO events VALUES(?,?,?)", row)
     connection.commit()
 
-
-# def read(extracted):
-#     with open("data.txt", "r") as file:
-#         return file.read()
 
 def read(extracted):
     row = extracted.split(",")
